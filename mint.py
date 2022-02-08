@@ -1,14 +1,17 @@
+from pprint import pprint
 import requests
 import base64
 import json
-from pprint import pprint
 import argparse
+import sys
 
 p = argparse.ArgumentParser(description="New")
 p.add_argument('-s','--specific', help='specific token')
 p.add_argument('-r','--random', action='store_true', required=False)
 p.add_argument('-w','--wallet', help='wallet address to send to')
-
+if len(sys.argv)==1:
+    p.print_help(sys.stderr)
+    sys.exit(1)
 args = p.parse_args()
 
 # Upload URL

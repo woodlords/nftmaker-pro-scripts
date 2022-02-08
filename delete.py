@@ -1,16 +1,20 @@
+from pprint import pprint
 import requests
 import base64
 import json
-from pprint import pprint
 import argparse
 import time
 import os
+import sys
 
 p = argparse.ArgumentParser(description="Delete NFT")
 p.add_argument('--ids', nargs="+", required=False, help='List of local IDs to delete, they should inlcude all 000 zeros based on number of digits.')
 p.add_argument('-s','--start', required=False, type=int)
 p.add_argument('-e','--end', required=False,type=int)
 p.add_argument('-f','--file', required=False)
+if len(sys.argv)==1:
+    p.print_help(sys.stderr)
+    sys.exit(1)
 args = p.parse_args()
 
 # Some variables you will need

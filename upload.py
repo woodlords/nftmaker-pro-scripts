@@ -1,8 +1,9 @@
+from pprint import pprint
 import requests
 import base64
 import json
-from pprint import pprint
 import argparse
+import sys
 
 
 p = argparse.ArgumentParser(description="New")
@@ -10,6 +11,9 @@ p.add_argument('-f','--folder-name', required=True, help='Folder name of the ima
 p.add_argument('-s','--start', required=False, help='Start ID to upload')
 p.add_argument('-e','--end', required=False, help='End number for IDs to upload')
 p.add_argument('--ids', nargs="+", required=False, help='List of local IDs to upload')
+if len(sys.argv)==1:
+    p.print_help(sys.stderr)
+    sys.exit(1)
 args = p.parse_args()
 
 

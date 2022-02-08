@@ -15,6 +15,10 @@ Metadata files don't need to be full and rather only the placeholders you will p
 # Uploading
 In order to upload you will need to run `upload.py -h` to see the help messages.
 
+```
+❯ python3 upload.py -f morpheus --ids 0501
+INFO: Working on asset WoodCastleProject0501
+```
 
 # Delete
 If you made mistakes and you want to deleting a token from the API you can do so with the `delete.py -h` script.
